@@ -169,7 +169,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">bolder: solid 1px</string>
+     <string notr="true"/>
     </property>
     <property name="title">
      <string>Operation Type</string>

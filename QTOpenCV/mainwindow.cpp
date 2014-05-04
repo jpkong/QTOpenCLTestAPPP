@@ -25,7 +25,7 @@ void MainWindow::Init()
 {
     int i = 0;
     //for(i=0; i<cDefine.EXAMPLE_LIST)
-    i = (int)(sizeof(cDefine.EXAMPLE_LIST)/sizeof(cDefine.EXAMPLE_LIST[0]));
+    //i = (int)(sizeof(cDefine.EXAMPLE_LIST)/sizeof(cDefine.EXAMPLE_LIST[0]));
 
     //ui->te_Result->setText(std::to_string(i));
 

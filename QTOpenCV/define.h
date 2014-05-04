@@ -1,13 +1,13 @@
 #ifndef DEFINE_H
 #define DEFINE_H
 
-#include <string>
-
 class cDefine
 {
 public:
-    const std::string EXAMPLE_LIST[] = {"SQUARE"};
+    static const char* EXAMPLE_LIST[];
 
 };
+
+const char* cDefine::EXAMPLE_LIST[2] = {"SQUARE"};
 
 #endif // DEFINE_H
