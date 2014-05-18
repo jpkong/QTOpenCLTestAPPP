@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>623</width>
-    <height>538</height>
+    <height>579</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>40</y>
+      <y>70</y>
       <width>351</width>
       <height>291</height>
      </rect>
@@ -123,12 +123,25 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
+    <widget class="QLabel" name="lb_View">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>351</width>
+       <height>291</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QComboBox" name="cb_ExampleList">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>0</y>
+      <y>30</y>
       <width>351</width>
       <height>27</height>
      </rect>
@@ -137,7 +150,7 @@
      <bool>false</bool>
     </property>
     <property name="currentIndex">
-     <number>-1</number>
+     <number>0</number>
     </property>
     <property name="minimumContentsLength">
      <number>0</number>
@@ -145,12 +158,22 @@
     <property name="frame">
      <bool>true</bool>
     </property>
+    <item>
+     <property name="text">
+      <string>SQUARE</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>HOG</string>
+     </property>
+    </item>
    </widget>
    <widget class="QPushButton" name="bt_Start">
     <property name="geometry">
      <rect>
       <x>430</x>
-      <y>0</y>
+      <y>30</y>
       <width>131</width>
       <height>27</height>
      </rect>
@@ -163,7 +186,7 @@
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>40</y>
+      <y>80</y>
       <width>201</width>
       <height>61</height>
      </rect>
@@ -214,7 +237,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>340</y>
+      <y>370</y>
       <width>581</width>
       <height>131</height>
      </rect>
@@ -226,7 +249,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>30</y>
+       <y>20</y>
        <width>581</width>
        <height>101</height>
       </rect>
@@ -235,6 +258,19 @@
       <bool>false</bool>
      </property>
     </widget>
+   </widget>
+   <widget class="QLabel" name="lb_Version">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>0</y>
+      <width>241</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;OpenCV Version : &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

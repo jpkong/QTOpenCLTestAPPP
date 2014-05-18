@@ -16,4 +16,16 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     define.h
 
+INCLUDEPATH += /usr/local/include/opencv
+LIBS += -L~/workspace/opencv-2.4.4/lib
+LIBS += -lopencv_core
+LIBS += -lopencv_imgproc
+LIBS += -lopencv_highgui
+LIBS += -lopencv_ml
+LIBS += -lopencv_video
+LIBS += -lopencv_ocl
+
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    Resource.qrc

@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "define.h"
+#include "opencv/cv.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -8,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
+    Init();
 }
 
 MainWindow::~MainWindow()
@@ -23,12 +24,11 @@ void MainWindow::Start()
 
 void MainWindow::Init()
 {
-    int i = 0;
-    //for(i=0; i<cDefine.EXAMPLE_LIST)
-    //i = (int)(sizeof(cDefine.EXAMPLE_LIST)/sizeof(cDefine.EXAMPLE_LIST[0]));
-
-    //ui->te_Result->setText(std::to_string(i));
-
     // Event
     connect(ui->bt_Start,SIGNAL(clicked()), this, SLOT(Start()));
+
+    ui->lb_Version->setText(QString("OpenCV Version : ").append(CV_VERSION));
+    imagerd = cvLoadImage("./pic1.png");
+    QImage image = QImage((const unsigned char*)(imagerd->imageData), imagerd->width,imagerd->height,QImage::Format_RGB888).rgbSwapped();
+    ui->lb_View->setPixmap(QPixmap::fromImage(image));
 }
