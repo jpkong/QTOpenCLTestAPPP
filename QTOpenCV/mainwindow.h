@@ -2,9 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <opencv/cv.h>
 #include <opencv2/imgproc/imgproc.hpp>
-#include <opencv/highgui.h>
+
 
 namespace Ui {
 class MainWindow;
@@ -19,8 +18,13 @@ public:
     ~MainWindow();
     void Init();
 
+private:
+    void OpenCVTest();
+
 private slots:
     void Start();
+
+public:
 
 private:
     Ui::MainWindow *ui;

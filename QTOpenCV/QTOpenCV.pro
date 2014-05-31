@@ -11,20 +11,27 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    square_ocl.cpp
 
 HEADERS  += mainwindow.h \
-    define.h
+    define.h \
+    square_ocl.h
 
 INCLUDEPATH += -L~/workspace/opencv-2.4.4/include
+INCLUDEPATH += -L/usr/include/CL
+
 LIBS += -L~/workspace/opencv-2.4.4/lib
+LIBS += -L/usr/lib
+
 LIBS += -lopencv_core
 LIBS += -lopencv_imgproc
 LIBS += -lopencv_highgui
 LIBS += -lopencv_ml
 LIBS += -lopencv_video
 LIBS += -lopencv_ocl
+LIBS += -lopencv_features2d
+LIBS += -lopencv_objdetect
+LIBS += -lOpenCL
 
 FORMS    += mainwindow.ui
-
-RESOURCES +=
