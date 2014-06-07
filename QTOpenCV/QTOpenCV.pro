@@ -21,22 +21,18 @@ HEADERS  += mainwindow.h \
 INCLUDEPATH += -L~/workspace/opencv-2.4.4/include
 INCLUDEPATH += -L/usr/include/CL
 
-LIBS += -L~/workspace/opencv-2.4.4/lib
-LIBS += -L/usr/lib
-
-LIBS += -lopencv_core
-LIBS += -lopencv_imgproc
-LIBS += -lopencv_highgui
-LIBS += -lopencv_ml
-LIBS += -lopencv_video
-LIBS += -lopencv_ocl
-LIBS += -lopencv_features2d
-LIBS += -lopencv_calib3d
-LIBS += -lopencv_objdetect
-LIBS += -lopencv_contrib
-LIBS += -lopencv_legacy
-LIBS += -lopencv_flann
-LIBS += -lopencv_nonfree
-LIBS += -lOpenCL
+LIBS += ~/workspace/opencv-2.4.4/lib/libopencv_core.so
+LIBS += ~/workspace/opencv-2.4.4/lib/libopencv_imgproc.so
+LIBS += ~/workspace/opencv-2.4.4/lib/libopencv_highgui.so
+LIBS += ~/workspace/opencv-2.4.4/lib/libopencv_ml.so
+LIBS += ~/workspace/opencv-2.4.4/lib/libopencv_video.so
+LIBS += ~/workspace/opencv-2.4.4/lib/libopencv_features2d.so
+LIBS += ~/workspace/opencv-2.4.4/lib/libopencv_ocl.so
+LIBS += ~/workspace/opencv-2.4.4/lib/libopencv_calib3d.so
+LIBS += ~/workspace/opencv-2.4.4/lib/libopencv_objdetect.so
+LIBS += ~/workspace/opencv-2.4.4/lib/libopencv_contrib.so
+LIBS += ~/workspace/opencv-2.4.4/lib/libopencv_legacy.so
+LIBS += ~/workspace/opencv-2.4.4/lib/libopencv_flann.so
+LIBS += ~/workspace/opencv-2.4.4/lib/libopencv_nonfree.so
 
 FORMS    += mainwindow.ui
