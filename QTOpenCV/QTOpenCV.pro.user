@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD
 <!-- Written by Qt Creator 2.4.1, 2014-06-08T00:39:34. -->
+=======
+<!-- Written by Qt Creator 2.4.1, 2014-06-07T20:55:18. -->
+>>>>>>> c6b98051e3372885c5aa69fcb8367250cb797a20
 <qtcreator>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -160,7 +164,11 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">2</value>
+<<<<<<< HEAD
     <value type="QString" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory">/home/openseed/workspace/QTOpenCLTestAPPP/debug</value>
+=======
+    <value type="QString" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory">/home/openseed/workspace/QT/QT_OpenCV/QTOpenCLTestAPPP/bin</value>
+>>>>>>> c6b98051e3372885c5aa69fcb8367250cb797a20
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.QtVersionId">1</value>
     <value type="bool" key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild">true</value>
    </valuemap>

@@ -43,7 +43,11 @@ void MainWindow::Init()
     vector<ocl::Info> info;
     //cv::ocl::getDevice(info);
 
+<<<<<<< HEAD
     OpenCVTest();
+=======
+    //OpenCVTest();
+>>>>>>> c6b98051e3372885c5aa69fcb8367250cb797a20
 }
 
 // OpenCV Porting Simply Test
