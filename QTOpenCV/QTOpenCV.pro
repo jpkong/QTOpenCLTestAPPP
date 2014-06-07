@@ -12,7 +12,8 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    square_ocl.cpp
+    square_ocl.cpp \
+    hog.cpp
 
 HEADERS  += mainwindow.h \
     define.h \
