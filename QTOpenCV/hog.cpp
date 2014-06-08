@@ -1,20 +1,8 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <sstream>
-#include <iomanip>
-#include <stdexcept>
-#include "opencv2/ocl/ocl.hpp"
-#include "opencv2/highgui/highgui.hpp"
-
-#include <QtGui/QApplication>
-#include "mainwindow.h"
-
-using namespace std;
-using namespace cv;
+#include "hog.hpp"
 
 bool help_showed = false;
 
+/*
 class Args
 {
 public:
@@ -87,6 +75,7 @@ private:
     int64 work_begin;
     double work_fps;
 };
+*/
 
 //static void printHelp()
 void printHelp()
@@ -112,17 +101,18 @@ void printHelp()
     help_showed = true;
 }
 
-
-int main(int argc, char** argv)
+/*
+int run_hog(void)
 {
     try
     {
-        if (argc < 2)
-            printHelp();
-        Args args = Args::read(argc, argv);
+//        if (argc < 2)
+//            printHelp();
+//        cv::ocl::Args args = cv::ocl::Args::read(argc, argv);
+        cv::ocl::HogArgs args;
         if (help_showed)
             return -1;
-        App app(args);
+        cv::ocl::HogApp app(args);
         app.run();
     }
     catch (const Exception& e) { return cout << "error: "  << e.what() << endl, 1; }
@@ -130,16 +120,15 @@ int main(int argc, char** argv)
     catch(...) { return cout << "unknown exception" << endl, 1; }
     return 0;
 
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+//    QApplication a(argc, argv);
+//    MainWindow w;
+//    w.show();
 
-    return a.exec();
+//    return a.exec();
 }
+*/
 
-
-
-Args::Args()
+cv::ocl::HogArgs::HogArgs()
 {
     src_is_video = false;
     src_is_camera = false;
@@ -168,9 +157,9 @@ Args::Args()
 }
 
 
-Args Args::read(int argc, char** argv)
+cv::ocl::HogArgs cv::ocl::HogArgs::read(int argc, char** argv)
 {
-    Args args;
+    HogArgs args;
     for (int i = 1; i < argc; i++)
     {
         if (string(argv[i]) == "--make_gray") args.make_gray = (string(argv[++i]) == "true");
@@ -202,7 +191,7 @@ Args Args::read(int argc, char** argv)
 }
 
 
-App::App(const Args& s)
+cv::ocl::HogApp::HogApp(const HogArgs& s)
 {
     args = s;
     cout << "\nControls:\n"
@@ -243,7 +232,7 @@ App::App(const Args& s)
 }
 
 
-void App::run()
+void cv::ocl::HogApp::run(QLabel* lb_image)
 {
     std::vector<ocl::Info> oclinfo;
     ocl::getDevice(oclinfo);
@@ -264,7 +253,7 @@ void App::run()
                                    cv::ocl::HOGDescriptor::DEFAULT_WIN_SIGMA, 0.2, gamma_corr,
                                    cv::ocl::HOGDescriptor::DEFAULT_NLEVELS);
     cv::HOGDescriptor cpu_hog(win_size, Size(16, 16), Size(8, 8), Size(8, 8), 9, 1, -1,
-                              HOGDescriptor::L2Hys, 0.2, gamma_corr, cv::HOGDescriptor::DEFAULT_NLEVELS);
+                              cv::HOGDescriptor::L2Hys, 0.2, gamma_corr, cv::HOGDescriptor::DEFAULT_NLEVELS);
     gpu_hog.setSVMDetector(detector);
     cpu_hog.setSVMDetector(detector);
 
@@ -350,6 +339,10 @@ void App::run()
 
             if (args.src_is_video || args.src_is_camera) vc >> frame;
 
+            // jp
+            QImage tmp_image = Mat2QImage(frame);
+            lb_image->setPixmap(QPixmap::fromImage(tmp_image));
+
             workEnd();
 
             if (args.write_video)
@@ -374,7 +367,7 @@ void App::run()
 }
 
 
-void App::handleKey(char key)
+void cv::ocl::HogApp::handleKey(char key)
 {
     switch (key)
     {
@@ -436,16 +429,16 @@ void App::handleKey(char key)
 }
 
 
-inline void App::hogWorkBegin() { hog_work_begin = getTickCount(); }
+inline void cv::ocl::HogApp::hogWorkBegin() { hog_work_begin = getTickCount(); }
 
-inline void App::hogWorkEnd()
+inline void cv::ocl::HogApp::hogWorkEnd()
 {
     int64 delta = getTickCount() - hog_work_begin;
     double freq = getTickFrequency();
     hog_work_fps = freq / delta;
 }
 
-inline string App::hogWorkFps() const
+inline string cv::ocl::HogApp::hogWorkFps() const
 {
     stringstream ss;
     ss << hog_work_fps;
@@ -453,16 +446,16 @@ inline string App::hogWorkFps() const
 }
 
 
-inline void App::workBegin() { work_begin = getTickCount(); }
+inline void cv::ocl::HogApp::workBegin() { work_begin = getTickCount(); }
 
-inline void App::workEnd()
+inline void cv::ocl::HogApp::workEnd()
 {
     int64 delta = getTickCount() - work_begin;
     double freq = getTickFrequency();
     work_fps = freq / delta;
 }
 
-inline string App::workFps() const
+inline string cv::ocl::HogApp::workFps() const
 {
     stringstream ss;
     ss << work_fps;

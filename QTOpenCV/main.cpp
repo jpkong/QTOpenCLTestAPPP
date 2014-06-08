@@ -1,13 +1,13 @@
-/*
 #include <QtGui/QApplication>
 #include "mainwindow.h"
 #include <opencv2/ocl/ocl.hpp>
 //#include <opencv2/highgui/highgui.hpp>
 
-extern void printHelp();
+//extern void printHelp();
 
 int main(int argc, char *argv[])
 {
+/*
     try
     {
         if (argc < 2)
@@ -22,11 +22,12 @@ int main(int argc, char *argv[])
     catch (const exception& e) { return cout << "error: "  << e.what() << endl, 1; }
     catch(...) { return cout << "unknown exception" << endl, 1; }
     return 0;
-
-//    QApplication a(argc, argv);
-//    MainWindow w;
-//    w.show();
-
-//    return a.exec();
-}
 */
+
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+
+    return a.exec();
+}
+

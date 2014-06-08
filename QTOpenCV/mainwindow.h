@@ -2,8 +2,20 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <opencv2/imgproc/imgproc.hpp>
 
+
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/ocl/ocl.hpp>
+
+#include "square_ocl.h"
+#include "global.h"
+#include "hog.hpp"
+
+using namespace cv;
+using namespace std;
 
 namespace Ui {
 class MainWindow;
@@ -23,6 +35,7 @@ private:
 
 private slots:
     void Start();
+    void Stop();
 
 public:
 
