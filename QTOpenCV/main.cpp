@@ -4,7 +4,7 @@
 //#include <opencv2/highgui/highgui.hpp>
 
 //extern void printHelp();
-
+#if 1
 int main(int argc, char *argv[])
 {
 /*
@@ -30,4 +30,4 @@ int main(int argc, char *argv[])
 
     return a.exec();
 }
-
+#endif

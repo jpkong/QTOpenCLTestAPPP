@@ -10,8 +10,8 @@ TARGET = QTOpenCV
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp \
+SOURCES += mainwindow.cpp\
+        main.cpp \
     square_ocl.cpp \
     hog.cpp \
     global.cpp

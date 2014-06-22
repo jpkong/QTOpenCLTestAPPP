@@ -123,7 +123,7 @@ int run_hog(void)
 //    QApplication a(argc, argv);
 //    MainWindow w;
 //    w.show();
-
+aghou
 //    return a.exec();
 }
 */
